@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseño Web Profesional</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #1e40af;
+      --accent: #3b82f6;
+      --text: #1f2937;
+      --light: #f3f4f6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      animation: fadeInUp 1s ease;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      animation: fadeInUp 1s ease 0.2s;
+    }
+
+    .services {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .portfolio {
+      background: var(--light);
+      padding: 4rem 2rem;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 2rem auto;
+    }
+
+    .portfolio-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      aspect-ratio: 16/9;
+      background: var(--accent);
+    }
+
+    .portfolio-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .portfolio-item:hover img {
+      transform: scale(1.05);
+    }
+
+    .contact {
+      padding: 4rem 2rem;
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Estilos para la sección de imágenes */
+    .image-section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .image-card {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 200px; /* Ajusta la altura según tus necesidades */
+      object-fit: cover;
+    }
+
+    .image-card .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .image-card:hover .overlay {
+      opacity: 1;
+    }
+
+    .image-card .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+    }
+
+    /* Estilos para la sección de contacto */
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      padding: 1rem 2rem;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>Diseño Web Profesional</h1>
+    <p>Crea una presencia online impactante con diseños web personalizados.</p>
+  </header>
+
+  <section class="services">
+    <h2 class="section-title">Nuestros Servicios</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Diseño Web</h3>
+        <p>Creamos sitios web atractivos y funcionales.</p>
+      </div>
+      <div class="service-card">
+        <h3>Marketing Digital</h3>
+        <p>Impulsamos tu negocio online con estrategias efectivas.</p>
+      </div>
+      <div class="service-card">
+        <h3>SEO</h3>
+        <p>Posicionamos tu sitio web en los primeros resultados de búsqueda.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio">
+    <h2 class="section-title">Nuestro Portafolio</h2>
+    <div class="portfolio-grid">
+      <a href="https://estebanfedericomansilla.github.io/Elizabeth-Mansilla-Coaching-para-el-xito/" target="_blank">
+        <div class="portfolio-item">
+          <img src="https://github.com/user-attachments/assets/c3169cfa-101b-486a-86c9-234962cb48f6" alt="Proyecto 1">
+        </div>
+      </a>
+      <a href="https://estebanfedericomansilla.github.io/Cocheras-de-Autos-Tilisarao/" target="_blank">
+        <div class="portfolio-item">
+          <img src="https://github.com/user-attachments/assets/6734ca0f-0619-420d-9d87-2cfccd72a178" alt="Proyecto 2">
+        </div>
+      </a>
+      <a href="https://estebanfedericomansilla.github.io/Lector-de-p-ginas-Web/" target="_blank">
+        <div class="portfolio-item">
+          <img src="https://github.com/user-attachments/assets/d08675c8-2d9e-403f-a5d0-16a8740d2917" alt="Proyecto 3">
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="image-section">
+    <h2 class="section-title">Galería de Imágenes</h2>
+    <div class="image-grid">
+      <div class="image-card">
+        <img src="https://github.com/user-attachments/assets/d08675c8-2d9e-403f-a5d0-16a8740d2917" alt="Imagen 1">
+        <div class="overlay">
+          <div class="overlay-text">
+            <h3>Imagen 1</h3>
+          </div>
+        </div>
+      </div>
+      <div class="image-card">
+        <img src="https://github.com/user-attachments/assets/c3169cfa-101b-486a-86c9-234962cb48f6" alt="Imagen 2">
+        <div class="overlay">
+          <div class="overlay-text">
+            <h3>Imagen 2</h3>
+          </div>
+        </div>
+      </div>
+      <div class="image-card">
+        <img src="https://github.com/user-attachments/assets/6734ca0f-0619-420d-9d87-2cfccd72a178" alt="Imagen 3">
+        <div class="overlay">
+          <div class="overlay-text">
+            <h3>Imagen 3</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact">
+    <h2 class="section-title">Contáctanos</h2>
+    <p>¿Tienes alguna pregunta o necesitas un presupuesto?</p>
+    <div class="contact-buttons">
+      <a href="mailto:masteringsteve@gmail.com" class="btn btn-primary">
+        Correo electrónico
+      </a>
+      <a href="https://wa.link/jz0nta" class="btn btn-whatsapp">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+    <form class="contact-form">
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Correo electrónico" required>
+      <textarea placeholder="Mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 Diseño Web Profesional. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
+
+
+
+
